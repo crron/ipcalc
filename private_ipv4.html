@@ -7,55 +7,60 @@
     <title>IP calculator - contact</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/calculator.svg" width="30" height="30" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="index.html">IP calc</a>
-          <a class="nav-item nav-link" href="private_ipv4.html">Private IPv4<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="contact.html">Contact<span class="sr-only">(current)</span></a>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/calculator.svg" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">IP calc</a>
+            <a class="nav-item nav-link" href="private_ipv4.html">Private IPv4<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="contact.html">Contact</a>
+          </div>
         </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>IP calculator</h1>
+        <p class="lead">Private IPv4 addresses</p>
       </div>
-    </nav>
-
-    <div class="jumbotron">
-      <h1>IP calculator</h1>
-      <p class="lead">Private IPv4 addresses</p>
     </div>
 
-    <div class="contaier col-sm-10 col-md-6 text-center">
-      <table class="table table-bordered table-sm">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Subnet</th>
-            <th scope="col">Address range</th>
-            <th scope="col">Number of addresses</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10.0.0.0/8</td>
-            <td>10.0.0.0 - 10.255.255.255</td>
-            <td>16.777.216</td>
-          </tr>
-          <tr>
-            <td>172.16.0.0/12</td>
-            <td>172.16.0.0 - 172.31.255.255</td>
-            <td>1.048.576</td>
-          </tr>
-          <tr>
-            <td>192.168.0.0/16</td>
-            <td>192.168.0.0 - 192.168.255.255</td>
-            <td>65.536</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="container text-center">
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th>Subnet</th>
+              <th>Address range</th>
+              <th>Number of addresses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10.0.0.0/8</td>
+              <td>10.0.0.0 - 10.255.255.255</td>
+              <td>16.777.216</td>
+            </tr>
+            <tr>
+              <td>172.16.0.0/12</td>
+              <td>172.16.0.0 - 172.31.255.255</td>
+              <td>1.048.576</td>
+            </tr>
+            <tr>
+              <td>192.168.0.0/16</td>
+              <td>192.168.0.0 - 192.168.255.255</td>
+              <td>65.536</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
