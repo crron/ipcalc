@@ -33,19 +33,18 @@
     </div>
 
     <div class="container col-md-6 mb-5">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">IP address</span>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="ipAddress">IP address:</label>
+          <input type="text" class="form-control" id="ipAddress" name="ip" aria-aria-describedby="ipAddressHelp" placeholder="Enter IP address">
         </div>
-        <input type="text" class="form-control" id="ip" placeholder="e.g. 192.168.100.101" aria-label="IP Address" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">&nbspNet mask&nbsp</span>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="subnetMask">Subnet mask:</label>
+          <input type="text" class="form-control" id="subnetMask" name="mask" aria-aria-describedby="subnetMaskHelp" placeholder="Enter subnet mask">
+        </div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        <input type="text" class="form-control" id="mask" placeholder="e.g. /24 or 255.255.255.0" aria-label="Net mask" aria-describedby="basic-addon1">
-      </div>
-      <button type="button" class="btn btn-primary">Submit</button>
+      </form>
     </div>
 
     <div class="container col-md-6">
@@ -91,7 +90,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
-    <script src="js/net.js"></script>
     <script src="js/submit.js"></script>
   </body>
 </html>
