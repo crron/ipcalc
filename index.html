@@ -38,6 +38,16 @@
           <span class="input-group-text" id="basic-addon1">IP address</span>
         </div>
         <input type="text" class="form-control" id="ip" placeholder="e.g. 192.168.100.101" aria-label="IP Address" aria-describedby="basic-addon1">
+        <!--
+        <div class="col-sm-3">
+          <small id="ipHelp" class="text-danger invisible">
+            Error! IP addres is not valid.
+          </small>
+        </div>
+        -->
+        <div class="input-group-append">
+          <span class="input-group-text text-danger invisible" id="ipHelp">Error: IP address not valid.</span>
+        </div>
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">

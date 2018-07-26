@@ -21,6 +21,18 @@ class Net {
   }
 
   static validateMask(mask) {
-    alert(mask);
+    var re1 = /^\d{1,2}$/;
+    var re2 = /^\/\d{1,2}$/;
+    var out = false;
+
+    if (mask.length > 3) {
+      out = this.validateIp(mask);
+    } else {
+      if (re1.test(mask) || re2.test(mask)) {
+        out = true;
+      }
+    }
+    
+    return out;
   }
 }
