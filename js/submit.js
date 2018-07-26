@@ -1,34 +1,35 @@
 $(document).ready(function() {
   $(".btn").click(function() {
-    clearInput();
+    clearAlert();
 
     var ip = $('#ip').val();
     var mask = $('#mask').val();
 
     if (!Net.validateIp(ip)) {
       $('#ip').addClass('is-invalid');
-      $('#ipHelp').removeClass('invisible');
+      $('#alert').removeClass('invisible');
     }
 
     if (!Net.validateMask(mask)) {
       $('#mask').addClass('is-invalid');
+      $('#alert').removeClass('invisible');
     }
     //Net.validateMask(mask);
     //alert("clicked" + ip + ' ' + mask);
   });
 });
 
-function clearInput() {
+function clearAlert() {
   if ($('#ip').hasClass('is-invalid')) {
     $('#ip').removeClass('is-invalid');
   }
 
-  if (!$('#ipHelp').hasClass('invisible')) {
-    $('#ipHelp').addClass('invisible');
-  }
-
   if ($('#mask').hasClass('is-invalid')) {
     $('#mask').removeClass('is-invalid');
+  }
+
+  if (!$('#alert').hasClass('invisible')) {
+    $('#alert').addClass('invisible');
   }
 }
 

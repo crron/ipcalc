@@ -32,22 +32,12 @@
       </div>
     </div>
 
-    <div class="container col-md-6 mb-5">
+    <div class="container col-md-6">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">IP address</span>
         </div>
         <input type="text" class="form-control" id="ip" placeholder="e.g. 192.168.100.101" aria-label="IP Address" aria-describedby="basic-addon1">
-        <!--
-        <div class="col-sm-3">
-          <small id="ipHelp" class="text-danger invisible">
-            Error! IP addres is not valid.
-          </small>
-        </div>
-        -->
-        <div class="input-group-append">
-          <span class="input-group-text text-danger invisible" id="ipHelp">Error: IP address not valid.</span>
-        </div>
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -56,6 +46,9 @@
         <input type="text" class="form-control" id="mask" placeholder="e.g. /24 or 255.255.255.0" aria-label="Net mask" aria-describedby="basic-addon1">
       </div>
       <button type="button" class="btn btn-primary">Submit</button>
+      <div class="alert alert-danger mt-2 invisible" id="alert" role="alert">
+        Error! Invalid value.
+      </div>
     </div>
 
     <div class="container col-md-6">
