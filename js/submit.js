@@ -1,21 +1,30 @@
 $(document).ready(function() {
   $(".btn").click(function() {
     clearAlert();
+    clearResultTable();
 
-    var ip = $('#ip').val();
-    var mask = $('#mask').val();
+    var ip_str = $('#ip').val();
+    var mask_str = $('#mask').val();
+    var ip_bool = false;
+    var mask_bool = false;
 
-    if (!Net.validateIp(ip)) {
+    if (Net.validateIp(ip_str)) {
+      ip_bool = true;
+    } else {
       $('#ip').addClass('is-invalid');
       $('#alert').removeClass('invisible');
     }
 
-    if (!Net.validateMask(mask)) {
+    if (Net.validateMask(mask_str)) {
+      mask_bool = true;
+    } else {
       $('#mask').addClass('is-invalid');
       $('#alert').removeClass('invisible');
     }
-    //Net.validateMask(mask);
-    //alert("clicked" + ip + ' ' + mask);
+
+    if (ip_bool == true && mask_bool == true) {
+      $( "#out-network" ).append( "Test" );
+    }
   });
 });
 
@@ -31,6 +40,10 @@ function clearAlert() {
   if (!$('#alert').hasClass('invisible')) {
     $('#alert').addClass('invisible');
   }
+}
+
+function clearResultTable() {
+  $( "#out-network" ).empty();
 }
 
 /*

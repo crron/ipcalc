@@ -27,12 +27,23 @@ class Net {
 
     if (mask.length > 3) {
       out = this.validateIp(mask);
-    } else {
-      if (re1.test(mask) || re2.test(mask)) {
-        out = true;
-      }
+    } else if (re1.test(mask)) {
+      out = this.validateMaskRange(Number(mask));
+    } else if (re2.test(mask)) {
+      out = this.validateMaskRange(Number(mask.substr(1)));
     }
-    
+
+    return out;
+  }
+
+  static validateMaskRange(mask) {
+    var out = false;
+    //alert(mask);
+
+    if (0 <= mask && mask <= 32) {
+      out = true;
+    }
+
     return out;
   }
 }
