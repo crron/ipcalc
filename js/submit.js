@@ -1,3 +1,6 @@
+// requires network.js
+//          validator.js
+
 $(document).ready(function() {
   $(".btn").click(function() {
     clearAlert();
@@ -8,14 +11,14 @@ $(document).ready(function() {
     var ip_bool = false;
     var mask_bool = false;
 
-    if (Net.validateIp(ip_str)) {
+    if (Validator.validateIp(ip_str)) {
       ip_bool = true;
     } else {
       $('#ip').addClass('is-invalid');
       $('#alert').removeClass('invisible');
     }
 
-    if (Net.validateMask(mask_str)) {
+    if (Validator.validateMask(mask_str)) {
       mask_bool = true;
     } else {
       $('#mask').addClass('is-invalid');
@@ -23,7 +26,30 @@ $(document).ready(function() {
     }
 
     if (ip_bool == true && mask_bool == true) {
-      $( "#out-network" ).append( "Test" );
+      if (mask_str.length <= 2) {
+        mask_str = Converter.maskBinToIp(Converter.maskNumToBin(mask_str));
+      } else if (mask_str.length == 3) {
+        mask_str = Converter.maskBinToIp(Converter.maskNumToBin(mask_str.slice(-2)));
+      }
+
+      net = new Network(ip_str, mask_str);
+      /*
+      console.log(net.network);
+      console.log(net.mask);
+      console.log(net.broadcast);
+      console.log(net.wildcard);
+      console.log(net.hostNumber);
+      console.log(net.hostMin);
+      console.log(net.hostMax);
+      */
+
+      $('#network').append(net.network);
+      $('#netMask').append(net.mask);
+      $('#wildcard').append(net.broadcast);
+      $('#broadcast').append(net.wildcard);
+      $('#hosts').append(net.hostNumber);
+      $('#hostMin').append(net.hostMin);
+      $('#hostMax').append(net.hostMax);
     }
   });
 });
@@ -43,28 +69,11 @@ function clearAlert() {
 }
 
 function clearResultTable() {
-  $( "#out-network" ).empty();
+  $('#network').empty();
+  $('#mask').empty();
+  $('#wildcard').empty();
+  $('#broadcast').empty();
+  $('#hosts').empty();
+  $('#hstMin').empty();
+  $('#hostMax').empty();
 }
-
-/*
-$(document).ready(function(){
-    $.fn.displayError = function(){
-        alert('You have successfully defined the function!');
-        //console.log("Warning!");
-    }
-
-    $("form").submit(function(){
-        $.fn.displayError();
-    });
-});
-*/
-
-/*
-$("form").submit(function(){
-  $.fn.myFunction = function(){
-    alert('You have successfully defined the function!');
-  }
-    $(this).alert("Submitted");
-    $(this).displayWarning("Submitted");
-});
-*/
