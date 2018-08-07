@@ -41,10 +41,11 @@ $(document).ready(function() {
       console.log(net.hostNumber);
       console.log(net.hostMin);
       console.log(net.hostMax);
+      console.log(Converter.maskIpToNum(net.mask));
       */
 
       $('#network').append(net.network);
-      $('#netMask').append(net.mask);
+      $('#netMask').append(net.mask + " [" + Converter.maskIpToNum(net.mask) + "]");
       $('#wildcard').append(net.broadcast);
       $('#broadcast').append(net.wildcard);
       $('#hosts').append(net.hostNumber);
@@ -70,10 +71,10 @@ function clearAlert() {
 
 function clearResultTable() {
   $('#network').empty();
-  $('#mask').empty();
+  $('#netMask').empty();
   $('#wildcard').empty();
   $('#broadcast').empty();
   $('#hosts').empty();
-  $('#hstMin').empty();
+  $('#hostMin').empty();
   $('#hostMax').empty();
 }

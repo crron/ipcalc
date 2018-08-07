@@ -60,4 +60,14 @@ class Converter {
 
     return out;
   }
+
+  static maskIpToNum(ipStr) {
+    var maskBin;
+    var out;
+
+    maskBin = this.maskIpToBin(ipStr);
+    out = (maskBin.match(/1/g) || []).length
+
+    return out;
+  }
 }
