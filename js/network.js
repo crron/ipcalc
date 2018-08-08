@@ -86,7 +86,8 @@ class Network {
 
     if (this.hostNumber > 0) {
       splitNetwork = this.network.split(".");
-      splitNetwork[3] += 1;
+      splitNetwork[3] = Number(splitNetwork[3]) + 1;
+      splitNetwork[3] = String(splitNetwork[3]);
       hostMin = splitNetwork.join(".");
     } else {
       hostMin = 0;
@@ -101,7 +102,8 @@ class Network {
 
     if (this.hostNumber > 0) {
       splitBroadcast = this.broadcast.split(".");
-      splitBroadcast[3] -= 1;
+      splitBroadcast[3] = Number(splitBroadcast[3]) - 1;
+      splitBroadcast[3] = String(splitBroadcast[3]);
       hostMax = splitBroadcast.join(".");
     } else {
       hostMax = 0;

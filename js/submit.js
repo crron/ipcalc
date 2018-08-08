@@ -45,7 +45,7 @@ $(document).ready(function() {
       */
 
       $('#network').append(net.network);
-      $('#netMask').append(net.mask + " [" + Converter.maskIpToNum(net.mask) + "]");
+      $('#netMask').append(net.mask + " [/" + Converter.maskIpToNum(net.mask) + "]");
       $('#wildcard').append(net.broadcast);
       $('#broadcast').append(net.wildcard);
       $('#hosts').append(net.hostNumber);
