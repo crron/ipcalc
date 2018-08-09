@@ -33,21 +33,11 @@ $(document).ready(function() {
       }
 
       net = new Network(ip_str, mask_str);
-      /*
-      console.log(net.network);
-      console.log(net.mask);
-      console.log(net.broadcast);
-      console.log(net.wildcard);
-      console.log(net.hostNumber);
-      console.log(net.hostMin);
-      console.log(net.hostMax);
-      console.log(Converter.maskIpToNum(net.mask));
-      */
 
       $('#network').append(net.network);
       $('#netMask').append(net.mask + " [/" + Converter.maskIpToNum(net.mask) + "]");
-      $('#wildcard').append(net.broadcast);
-      $('#broadcast').append(net.wildcard);
+      $('#wildcard').append(net.wildcard);
+      $('#broadcast').append(net.broadcast);
       $('#hosts').append(net.hostNumber);
       $('#hostMin').append(net.hostMin);
       $('#hostMax').append(net.hostMax);
