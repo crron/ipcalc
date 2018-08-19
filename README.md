@@ -1,4 +1,4 @@
 # ipcalc
 Online IPv4 subnet calculator.
-UI wiritten in Bootstrap.
+UI written in Bootstrap.
 Calculator functions written in Javascript.
